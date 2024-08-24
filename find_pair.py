@@ -1,12 +1,13 @@
 def find_pair(A,sum):
+    pf=False
     for i in range(len(A)-1):
-        print(i)
         for j in range(i+1, len(A)):
             if A[i]+A[j] == sum:
                 print("pair found at index{0} and {1} ie".format(i,j))
-                print(A[i]+A[j])
-                
-    print("pair not found")
+                print(A[i], A[j])
+                pf=True
+    if pf==False:
+        print("pair not found")
 
 if __name__ == '__main__':
 
@@ -14,4 +15,3 @@ if __name__ == '__main__':
     sum = 10
 
     find_pair(A,sum)
-
