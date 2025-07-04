@@ -5,6 +5,8 @@
 			{
 				"name": "foreachfile",
 				"type": "ForEach",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
@@ -87,6 +89,56 @@
 							]
 						}
 					]
+				}
+			},
+			{
+				"name": "gitMetadata",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": {
+						"value": "https://github.com/anshlambagit/Netflix_Azure_Data_Engineering_Project/blob/main/RawData_AND_Notebooks/netflix_cast.csv",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "v_metadata",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "gitMetadata",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "pipelineReturnValue",
+					"value": [
+						{
+							"key": "v_metadata",
+							"value": {
+								"type": "Object",
+								"content": "@activity('gitMetadata').output"
+							}
+						}
+					],
+					"setSystemVariable": true
 				}
 			}
 		],
