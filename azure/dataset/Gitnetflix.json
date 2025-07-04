@@ -23,8 +23,8 @@
 			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
 			"escapeChar": "\\",
-			"firstRowAsHeader": false,
-			"quoteChar": "\""
+			"firstRowAsHeader": true,
+			"quoteChar": null
 		},
 		"schema": []
 	}
