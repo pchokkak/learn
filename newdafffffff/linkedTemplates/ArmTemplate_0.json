@@ -94,7 +94,7 @@
 					"location": {
 						"type": "HttpServerLocation",
 						"relativeUrl": {
-							"value": "@concat('anshlambagit/Netflix_Azure_Data_Engineering_Project/blob/main/RawData_AND_Notebooks/','dataset().file_name')",
+							"value": "anshlambagit/Netflix_Azure_Data_Engineering_Project/blob/main/RawData_AND_Notebooks/@{dataset().file_name}",
 							"type": "Expression"
 						}
 					},
