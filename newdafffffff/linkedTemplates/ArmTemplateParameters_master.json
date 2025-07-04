@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "newdafffffff"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureStorageGen2_accountKey": {
+			"value": ""
+		},
+		"AzureStorageGen2_properties_typeProperties_url": {
+			"value": "https://demostoraaaaaaaage.dfs.core.windows.net/"
+		},
+		"githubhttp_properties_typeProperties_url": {
+			"value": "https://github.com/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
