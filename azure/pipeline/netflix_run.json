@@ -137,8 +137,8 @@
 						{
 							"key": "v_metadata",
 							"value": {
-								"type": "Object",
-								"content": "@activity('gitMetadata').output"
+								"type": "String",
+								"content": "@activity('gitMetadata').output.response"
 							}
 						}
 					],
