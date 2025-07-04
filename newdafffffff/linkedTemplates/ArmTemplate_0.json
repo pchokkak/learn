@@ -191,7 +191,14 @@
 					{
 						"name": "foreachfile",
 						"type": "ForEach",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "v_metadata",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
@@ -225,7 +232,8 @@
 										"sink": {
 											"type": "DelimitedTextSink",
 											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings"
+												"type": "AzureBlobFSWriteSettings",
+												"copyBehavior": "MergeFiles"
 											},
 											"formatSettings": {
 												"type": "DelimitedTextWriteSettings",
@@ -273,6 +281,54 @@
 									]
 								}
 							]
+						}
+					},
+					{
+						"name": "gitMetadata",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"method": "GET",
+							"headers": {},
+							"url": "https://raw.githubusercontent.com/anshlambagit/Netflix_Azure_Data_Engineering_Project/refs/heads/main/RawData_AND_Notebooks/netflix_cast.csv"
+						}
+					},
+					{
+						"name": "v_metadata",
+						"type": "SetVariable",
+						"dependsOn": [
+							{
+								"activity": "gitMetadata",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "pipelineReturnValue",
+							"value": [
+								{
+									"key": "v_metadata",
+									"value": {
+										"type": "String",
+										"content": "@activity('gitMetadata').output.response"
+									}
+								}
+							],
+							"setSystemVariable": true
 						}
 					}
 				],
