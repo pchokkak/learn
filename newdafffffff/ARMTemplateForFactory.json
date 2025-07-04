@@ -182,8 +182,8 @@
 					"columnDelimiter": ",",
 					"rowDelimiter": "\n",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
-					"quoteChar": null
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
 				},
 				"schema": []
 			},
@@ -218,14 +218,15 @@
 							"type": "Expression"
 						},
 						"folderPath": {
-							"value": "@concat('Netflix', 'dataset().folder_name')",
+							"value": "@dataset().folder_name",
 							"type": "Expression"
 						},
-						"fileSystem": "bobtheblob"
+						"fileSystem": "bronze"
 					},
 					"columnDelimiter": ",",
+					"rowDelimiter": "\n",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
