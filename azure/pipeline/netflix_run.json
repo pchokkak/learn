@@ -9,7 +9,7 @@
 					{
 						"activity": "v_metadata",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
