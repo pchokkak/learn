@@ -19,11 +19,14 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat('dataset().folder_name', '/', 'dataset().file_name')",
+					"value": "@dataset().file_name",
 					"type": "Expression"
 				},
-				"folderPath": "netflix",
-				"fileSystem": "bobtheblob"
+				"folderPath": {
+					"value": "@dataset().folder_name",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
