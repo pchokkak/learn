@@ -14,7 +14,7 @@
 					},
 					"activities": [
 						{
-							"name": "github to blob",
+							"name": "git to blob",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
