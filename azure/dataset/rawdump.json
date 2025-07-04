@@ -29,9 +29,10 @@
 				"fileSystem": "bronze"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
-			"firstRowAsHeader": false,
-			"quoteChar": "\""
+			"firstRowAsHeader": true,
+			"quoteChar": ""
 		},
 		"schema": [
 			{
