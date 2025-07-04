@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "netflix_run",
 	"properties": {
 		"activities": [
 			{
