@@ -99,9 +99,10 @@
 						}
 					},
 					"columnDelimiter": ",",
+					"rowDelimiter": "\n",
 					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
+					"firstRowAsHeader": false,
+					"quoteChar": null
 				},
 				"schema": []
 			},
@@ -198,7 +199,7 @@
 							},
 							"activities": [
 								{
-									"name": "github to blob",
+									"name": "git to blob",
 									"type": "Copy",
 									"dependsOn": [],
 									"policy": {
